@@ -10,15 +10,14 @@ use yii\grid\GridView;
 /** @var app\models\PotensiKehutananKepemilikanSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Potensi Kehutanan Kepemilikans';
+$this->title = 'Potensi Kehutanan Kepemilikan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="potensi-kehutanan-kepemilikan-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Potensi Kehutanan Kepemilikan', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data ', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
@@ -30,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'nama_kepemilikan',
             'luas',
             [
