@@ -12,6 +12,8 @@ use app\models\ContactForm;
 use app\models\MataPencaharian;
 use app\models\Pendidikan;
 use app\models\Penduduk;
+use app\models\StrukturDesa;
+use app\models\VisiMisi;
 
 class PublicController extends Controller
 {
@@ -54,8 +56,14 @@ class PublicController extends Controller
     }
     public function actionPemerintahan()
     {
-        // $struktur
-        return $this->render('pemerintahan');
+        $struktur_desa = StrukturDesa::find()->where(['not', ['jabatan' => 'Kepala Desa']])->all();
+        $kepala_desa = StrukturDesa::find()->where(['jabatan' => 'Kepala Desa'])->one();
+        $visi_misi = VisiMisi::find()->one();
+        return $this->render('pemerintahan', [
+            'struktur_desa' => $struktur_desa,
+            'kepala_desa' => $kepala_desa,
+            'visi_misi' => $visi_misi,
+        ]);
     }
     public function actionPerkembanganDesa()
     {

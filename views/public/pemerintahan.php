@@ -24,11 +24,12 @@ $this->title = 'Pemerintahan | Wonosalam';
 					<div class="card">
 						<div class="card-body row">
 							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
+								<!-- <img src="assets/img/default-avatar.png" class="img-fluid" alt=""> -->
+								<?= Html::img('@web/img/default-avatar.png', ['class' => 'img-fluid']) ?>
 							</div>
 							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Desa</h5>
-								<p class="card-text">Samuki</p>
+								<h5 class="card-title"><?= $kepala_desa->jabatan  ?></h5>
+								<p class="card-text"><?= $kepala_desa->nama_lengkap  ?></p>
 							</div>
 						</div>
 					</div>
@@ -36,216 +37,24 @@ $this->title = 'Pemerintahan | Wonosalam';
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Badan Permusyawaratan Desa</h5>
-								<p class="card-text">GATOT SETYODARMO</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Sekeretaris Desa</h5>
-								<p class="card-text">IMAM JAZULI</p>
+			<?php foreach ($struktur_desa as $list_struktur) { ?>
+				<div class="col-lg-6 ">
+					<div class="card-deck">
+						<div class="card">
+							<div class="card-body row">
+								<div class="col-4">
+									<?= Html::img('@web/img/default-avatar.png', ['class' => 'img-fluid']) ?>
+								</div>
+								<div class="col-8 susunan-text">
+									<h5 class="card-title"><?= $list_struktur->jabatan ?></h5>
+									<p class="card-text"><?= $list_struktur->nama_lengkap ?></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Seksi Pemerintahan</h5>
-								<p class="card-text">TRIFEN KUSUMA INDRA JAYA</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Seksi Kesejahteraan</h5>
-								<p class="card-text">TATIK WULANDARI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Seksi Pelayanan</h5>
-								<p class="card-text">ENIEK MAULIDIAWATI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Urusan Tata Usaha dan Umum</h5>
-								<p class="card-text">SAMSURI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Urusan Keuangan</h5>
-								<p class="card-text">NISMAWATI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Urusan Perencanaan</h5>
-								<p class="card-text">NINA ARIANI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Pucangrejo</h5>
-								<p class="card-text">GANDA FIRMANTO, S.E.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Tukum</h5>
-								<p class="card-text">SUGENG AGUS PURNOMO</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Notorejo</h5>
-								<p class="card-text">SITI AMINAH</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Wonosalam</h5>
-								<p class="card-text">AUNUR ROFIQ</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Sumber</h5>
-								<p class="card-text">SAIFULLOH, S.Pd.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 ">
-				<div class="card-deck">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-4">
-								<img src="assets/img/default-avatar.png" class="img-fluid" alt="">
-							</div>
-							<div class="col-8 susunan-text">
-								<h5 class="card-title">Kepala Dusun Mangirejo</h5>
-								<p class="card-text">YOHANES SETIYO ADI</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
+
 		</div>
 	</div>
 </section>
@@ -261,8 +70,7 @@ $this->title = 'Pemerintahan | Wonosalam';
 			<div class="col-12 visi">
 				<p>Visi Desa Wonosalam tahun 2020-2025 : </p>
 				<p>
-					“Mewujudkan pemerintahan desa yang amanah dengan sinergitas serta kelarasan pola pikir
-					intelektual, emosional dan spiritual.”
+					“<?= $visi_misi->visi ?>”
 				</p>
 			</div>
 			<div class="col-12">
@@ -270,13 +78,10 @@ $this->title = 'Pemerintahan | Wonosalam';
 			</div>
 			<div class="col-12 misi">
 				<p>Misi Desa Wonosalam:</p>
-				<ol>
-					<li>Menciptakan pemerintahan desa yang berakhlakul karimah.</li>
-					<li>Terciptanya keadilan bagi masyarakat di segala bidang.</li>
-					<li>Menindaklanjuti program yang belum terlaksana di tahun yang lalu</li>
-					<li>Meningkatkan pemberdayaan, pembinaan, pembangunan disegala bidang demi tercapainya
-						pembangunan berkelanjutan</li>
-				</ol>
+				<!-- <ol> -->
+				<?= $visi_misi->misi ?>
+
+				<!-- </ol> -->
 			</div>
 		</div>
 	</div>
