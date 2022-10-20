@@ -6,14 +6,13 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\Pendidikan $model */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Pendidikans', 'url' => ['index']];
+$this->title = $model->tingkat_pendidikan;
+$this->params['breadcrumbs'][] = ['label' => 'Pendidikan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="pendidikan-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

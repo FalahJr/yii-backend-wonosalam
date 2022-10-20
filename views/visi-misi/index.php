@@ -16,15 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="visi-misi-index">
 
 
-    <!-- <p>
-        <?php
 
-        // echo Html::a('Create Visi Misi', ['create'], ['class' => 'btn btn-success'])
-        ?>
-    </p> -->
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -32,10 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'visi:ntext',
             'misi:ntext',
             [
+                'header' => 'Aksi',
+                'template' => '{update}',
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, VisiMisi $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);

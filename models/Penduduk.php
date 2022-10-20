@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "penduduk".
  *
  * @property int $id
- * @property int $jumlah_penduduk
+ * @property int $jumlah_kk
  * @property int $lelaki
  * @property int $perempuan
  */
@@ -28,8 +28,8 @@ class Penduduk extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['jumlah_penduduk', 'lelaki', 'perempuan'], 'required'],
-            [['jumlah_penduduk', 'lelaki', 'perempuan'], 'integer'],
+            [['jumlah_kk', 'lelaki', 'perempuan'], 'required'],
+            [['jumlah_kk', 'lelaki', 'perempuan'], 'integer'],
         ];
     }
 
@@ -40,7 +40,7 @@ class Penduduk extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'jumlah_penduduk' => 'Jumlah Penduduk',
+            'jumlah_kk' => 'Jumlah Kk',
             'lelaki' => 'Lelaki',
             'perempuan' => 'Perempuan',
         ];

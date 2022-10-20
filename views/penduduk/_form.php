@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'jumlah_penduduk')->textInput() ?>
+    <?= $form->field($model, 'jumlah_kk')->textInput(['type' => 'number'])->label('Jumlah Kartu Keluarga') ?>
 
-    <?= $form->field($model, 'lelaki')->textInput() ?>
+    <?= $form->field($model, 'lelaki')->textInput(['type' => 'number']) ?>
 
-    <?= $form->field($model, 'perempuan')->textInput() ?>
+    <?= $form->field($model, 'perempuan')->textInput(['type' => 'number']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <p>
-        <?= Html::a('Create Penduduk', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Penduduk', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
@@ -25,16 +25,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'jumlah_penduduk',
+            'jumlah_kk',
             'lelaki',
             'perempuan',
             [
                 'class' => ActionColumn::className(),
+                'header' => 'Aksi',
+                'template' => '{update}',
                 'urlCreator' => function ($action, Penduduk $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                 }

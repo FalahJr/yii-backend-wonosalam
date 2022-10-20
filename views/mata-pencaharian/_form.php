@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'jenis_pekerjaan')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'lelaki')->textInput() ?>
+    <?= $form->field($model, 'lelaki')->textInput(['type' => 'number']) ?>
 
-    <?= $form->field($model, 'perempuan')->textInput() ?>
+    <?= $form->field($model, 'perempuan')->textInput(['type' => 'number']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -9,6 +9,9 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\MataPencaharian;
+use app\models\Pendidikan;
+use app\models\Penduduk;
 
 class PublicController extends Controller
 {
@@ -51,11 +54,20 @@ class PublicController extends Controller
     }
     public function actionPemerintahan()
     {
+        // $struktur
         return $this->render('pemerintahan');
     }
     public function actionPerkembanganDesa()
     {
-        return $this->render('perkembangan-desa');
+
+        $penduduk = Penduduk::find()->one();
+        $pendidikan = Pendidikan::find()->all();
+        $pekerjaan = MataPencaharian::find()->all();
+        return $this->render('perkembangan-desa', [
+            'penduduk' => $penduduk,
+            'pendidikan' => $pendidikan,
+            'pekerjaan' => $pekerjaan,
+        ]);
     }
     public function actionPotensi()
     {

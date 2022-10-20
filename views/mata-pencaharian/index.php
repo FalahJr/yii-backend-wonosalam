@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\MataPencaharianSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Mata Pencaharians';
+$this->title = 'Mata Pencaharian';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mata-pencaharian-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Mata Pencaharian', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Mata Pencaharian', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'jenis_pekerjaan',
             'lelaki',
             'perempuan',
@@ -37,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, MataPencaharian $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

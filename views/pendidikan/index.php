@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\PendidikanSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Pendidikans';
+$this->title = 'Pendidikan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pendidikan-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Pendidikan', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Pendidikan', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,14 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'tingkat_pendidikan',
             'jumlah',
             [
+                'header' => 'Aksi',
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Pendidikan $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

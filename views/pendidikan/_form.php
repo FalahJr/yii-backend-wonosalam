@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tingkat_pendidikan')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'jumlah')->textInput() ?>
+    <?= $form->field($model, 'jumlah')->textInput(['type' => 'number']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

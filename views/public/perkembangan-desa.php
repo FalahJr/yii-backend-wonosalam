@@ -28,17 +28,19 @@ $this->title = 'Perkembangan Desa | Wonosalam';
 						</tr>
 					</thead>
 					<tbody>
+
 						<tr>
 							<td>Laki-laki</td>
-							<td>4435 orang</td>
+							<td><?= $penduduk->lelaki ?> orang</td>
+
 						</tr>
 						<tr>
 							<td>Perempuan</td>
-							<td>4357 orang</td>
+							<td><?= $penduduk->perempuan ?> orang</td>
 						</tr>
 						<tr>
 							<td>Jumlah Kepala Keluarga</td>
-							<td>2771 KK</td>
+							<td><?= $penduduk->jumlah_kk ?> KK</td>
 						</tr>
 					</tbody>
 				</table>
@@ -64,62 +66,12 @@ $this->title = 'Perkembangan Desa | Wonosalam';
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Usia 3 -6 yang sedang TK/play group</td>
-							<td>255 orang</td>
-						</tr>
-						<tr>
-							<td>Usia 7 -18 tahun yang tidak pernah sekolah</td>
-							<td>62 orang</td>
-						</tr>
-						<tr>
-							<td>Usia 18 - 56 tahun tidak pernah sekolah</td>
-							<td>60 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat SD/sederajat</td>
-							<td>2417 orang</td>
-						</tr>
-						<tr>
-							<td>Usia 12 - 56 tahun tidak tamat SLTP</td>
-							<td>122 orang</td>
-						</tr>
-						<tr>
-							<td>Usia 18 - 56 tahun tidak tamat SLTA</td>
-							<td>110 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat SMP/sederajat</td>
-							<td>1425 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat SMA/sederajat</td>
-							<td>1368 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat D-1/sederajat</td>
-							<td>148 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat D-2/sederajat</td>
-							<td>115 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat D-3/sederajat</td>
-							<td>270 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat S-2/sederajat</td>
-							<td>38 orang</td>
-						</tr>
-						<tr>
-							<td>Tamat SLB C</td>
-							<td>0 orang</td>
-						</tr>
-						<tr>
-							<td> <b>Jumlah Total</b> </td>
-							<td>6390 orang</td>
-						</tr>
+						<?php foreach ($pendidikan as $listPendidikan) { ?>
+							<tr>
+								<td><?= $listPendidikan->tingkat_pendidikan ?></td>
+								<td><?= $listPendidikan->jumlah ?> orang</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>
@@ -140,81 +92,15 @@ $this->title = 'Perkembangan Desa | Wonosalam';
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Petani</td>
-							<td>975 orang</td>
-							<td>725 orang</td>
-						</tr>
-						<tr>
-							<td>Buruh Tani</td>
-							<td>144 orang</td>
-							<td>60 orang</td>
-						</tr>
-						<tr>
-							<td>Pegawai Negeri Sipil</td>
-							<td>43 orang</td>
-							<td>29 orang</td>
-						</tr>
-						<tr>
-							<td>Peternak</td>
-							<td>80 orang</td>
-							<td>5 orang</td>
-						</tr>
-						<tr>
-							<td>Bidan Swasta</td>
-							<td>0 orang</td>
-							<td>2 orang</td>
-						</tr>
-						<tr>
-							<td>TNI</td>
-							<td>9 orang</td>
-							<td>1 orang</td>
-						</tr>
-						<tr>
-							<td>Polri</td>
-							<td>8 orang</td>
-							<td>0 orang</td>
-						</tr>
-						<tr>
-							<td>Pengusaha kecil, menengah dan besar</td>
-							<td>82 orang</td>
-							<td>12 orang</td>
-						</tr>
-						<tr>
-							<td>Wiraswasta</td>
-							<td>433 orang</td>
-							<td>173 orang</td>
-						</tr>
-						<tr>
-							<td>Perangkat Desa</td>
-							<td>5 orang</td>
-							<td>5 orang</td>
-						</tr>
-						<tr>
-							<td>Buruh jasa perdagangan hasil bumi</td>
-							<td>163 orang</td>
-							<td>151 orang</td>
-						</tr>
-						<tr>
-							<td>Karyawan honorer</td>
-							<td>7 orang</td>
-							<td>5 orang</td>
-						</tr>
-						<tr>
-							<td>Wartawan</td>
-							<td>2 orang</td>
-							<td>0 orang</td>
-						</tr>
-						<tr>
-							<td>Anggota Legislatif</td>
-							<td>1 orang</td>
-							<td>0 orang</td>
-						</tr>
-						<tr>
-							<td>Belum bekerja</td>
-							<td>1625 orang</td>
-							<td>1180 orang</td>
-						</tr>
+
+						<?php foreach ($pekerjaan as $listPekerjaan) { ?>
+							<tr>
+								<td><?= $listPekerjaan->jenis_pekerjaan ?></td>
+								<td><?= $listPekerjaan->lelaki ?> orang</td>
+								<td><?= $listPekerjaan->perempuan ?> orang</td>
+							</tr>
+						<?php } ?>
+
 					</tbody>
 				</table>
 			</div>

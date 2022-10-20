@@ -17,7 +17,7 @@ class PendudukSearch extends Penduduk
     public function rules()
     {
         return [
-            [['id', 'jumlah_penduduk', 'lelaki', 'perempuan'], 'integer'],
+            [['id', 'jumlah_kk', 'lelaki', 'perempuan'], 'integer'],
         ];
     }
 
@@ -58,7 +58,7 @@ class PendudukSearch extends Penduduk
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'jumlah_penduduk' => $this->jumlah_penduduk,
+            'jumlah_kk' => $this->jumlah_kk,
             'lelaki' => $this->lelaki,
             'perempuan' => $this->perempuan,
         ]);
