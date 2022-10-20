@@ -1,4 +1,7 @@
 <?php
+
+use app\components\NodeLogger;
+
 $this->title = 'Potensi | Wonosalam';
 ?>
 
@@ -29,26 +32,26 @@ $this->title = 'Potensi | Wonosalam';
 								  </tr>
 								</thead> -->
 								<tbody>
-									<tr>
-										<td>Terong</td>
-										<td>1,00 Ha</td>
-										<td>3,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Bayam</td>
-										<td>1,00 Ha</td>
-										<td>2,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Umbi-umbian lain</td>
-										<td>5,00 Ha</td>
-										<td>3,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Tumpang Sari</td>
-										<td>10,00 Ha</td>
-										<td>2,00 Ton/ha</td>
-									</tr>
+									<?php
+									foreach ($pertanian as $list_pertanian) {
+										// NodeLogger::sendLog($list_pertanian->potensi_pertanian_kategori_id);
+										if ($list_pertanian->potensi_pertanian_kategori_id === 1) {
+											$pertanian_komoditas = $list_pertanian;
+											// NodeLogger::sendLog($pertanian_komoditas);
+
+											// if ($pertanian['potensi_pertanian_kategori_id'] == 1) {
+											// 	$pertanian_komoditas = $pertanian;
+											// }
+									?>
+											<tr>
+												<td><?= $pertanian_komoditas->jenis ?></td>
+												<td><?= $pertanian_komoditas->luas ?> Ha</td>
+												<td><?= $pertanian_komoditas->hasil_panen ?> Ton/ha</td>
+											</tr>
+									<?php
+										}
+									}
+									?>
 								</tbody>
 							</table>
 						</div>
@@ -64,36 +67,26 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Alpokat</td>
-										<td>12,00 Ha</td>
-										<td>4,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Mangga</td>
-										<td>5,00 Ha</td>
-										<td>4,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Rambutan</td>
-										<td>5,00 Ha</td>
-										<td>3,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Manggis</td>
-										<td>5,00 Ha</td>
-										<td>2,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Salak</td>
-										<td>109,00 Ha</td>
-										<td>6,00 Ton/ha</td>
-									</tr>
-									<tr>
-										<td>Pepaya</td>
-										<td>2,00 Ha</td>
-										<td>7,00 Ton/ha</td>
-									</tr>
+									<?php
+									foreach ($pertanian as $list_pertanian) {
+										// NodeLogger::sendLog($list_pertanian->potensi_pertanian_kategori_id);
+										if ($list_pertanian->potensi_pertanian_kategori_id === 2) {
+											$pertanian_buah = $list_pertanian;
+											// NodeLogger::sendLog($pertanian_komoditas);
+
+											// if ($pertanian['potensi_pertanian_kategori_id'] == 1) {
+											// 	$pertanian_komoditas = $pertanian;
+											// }
+									?>
+											<tr>
+												<td><?= $pertanian_buah->jenis ?></td>
+												<td><?= $pertanian_buah->luas ?> Ha</td>
+												<td><?= $pertanian_buah->hasil_panen ?> Ton/ha</td>
+											</tr>
+									<?php
+										}
+									}
+									?>
 								</tbody>
 							</table>
 						</div>
@@ -125,26 +118,18 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Sapi</td>
-										<td>65</td>
-										<td>195</td>
-									</tr>
-									<tr>
-										<td>Ayam Kampung</td>
-										<td>1500</td>
-										<td>7500</td>
-									</tr>
-									<tr>
-										<td>Ayam Boiler</td>
-										<td>7</td>
-										<td>7000</td>
-									</tr>
-									<tr>
-										<td>Bebek</td>
-										<td>2</td>
-										<td>1000</td>
-									</tr>
+									<?php
+									foreach ($peternakan as $list_peternakan) {
+
+									?>
+										<tr>
+											<td><?= $list_peternakan->jenis_ternak ?></td>
+											<td><?= $list_peternakan->jumlah_pemilik ?></td>
+											<td><?= $list_peternakan->jumlah_populasi_ternak ?></td>
+										</tr>
+									<?php
+									}
+									?>
 								</tbody>
 							</table>
 						</div>

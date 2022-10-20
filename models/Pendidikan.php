@@ -29,7 +29,7 @@ class Pendidikan extends \yii\db\ActiveRecord
         return [
             [['tingkat_pendidikan', 'jumlah'], 'required'],
             [['jumlah'], 'integer'],
-            [['tingkat_pendidikan'], 'string', 'max' => 30],
+            [['tingkat_pendidikan'], 'string', 'max' => 100],
         ];
     }
 

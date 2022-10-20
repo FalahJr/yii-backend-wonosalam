@@ -66,12 +66,20 @@ $this->title = 'Perkembangan Desa | Wonosalam';
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($pendidikan as $listPendidikan) { ?>
+						<?php
+						$jumlah_total = 0;
+						foreach ($pendidikan as $listPendidikan) { ?>
 							<tr>
 								<td><?= $listPendidikan->tingkat_pendidikan ?></td>
 								<td><?= $listPendidikan->jumlah ?> orang</td>
+								<?php $jumlah_total += $listPendidikan->jumlah ?>
 							</tr>
 						<?php } ?>
+						<tr>
+							<td>Jumlah</td>
+
+							<td><?= $jumlah_total ?> orang</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

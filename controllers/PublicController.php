@@ -12,6 +12,8 @@ use app\models\ContactForm;
 use app\models\MataPencaharian;
 use app\models\Pendidikan;
 use app\models\Penduduk;
+use app\models\PotensiPertanian;
+use app\models\PotensiPeternakan;
 use app\models\StrukturDesa;
 use app\models\VisiMisi;
 
@@ -79,7 +81,13 @@ class PublicController extends Controller
     }
     public function actionPotensi()
     {
-        return $this->render('potensi');
+        $pertanian = PotensiPertanian::find()->all();
+        $peternakan = PotensiPeternakan::find()->all();
+        return $this->render('potensi', [
+            'pertanian' => $pertanian,
+            'peternakan' => $peternakan,
+
+        ]);
     }
     public function actionSejarah()
     {
