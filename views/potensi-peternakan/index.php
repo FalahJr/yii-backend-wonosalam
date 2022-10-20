@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\PotensiPeternakanSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Potensi Peternakans';
+$this->title = 'Potensi Peternakan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="potensi-peternakan-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Potensi Peternakan', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Potensi Peternakan', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'jenis_ternak',
             'jumlah_pemilik',
             'jumlah_populasi_ternak',
@@ -37,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, PotensiPeternakan $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

@@ -6,14 +6,13 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\PotensiPeternakan $model */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Potensi Peternakans', 'url' => ['index']];
+$this->title = $model->jenis_ternak;
+$this->params['breadcrumbs'][] = ['label' => 'Potensi Peternakan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="potensi-peternakan-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

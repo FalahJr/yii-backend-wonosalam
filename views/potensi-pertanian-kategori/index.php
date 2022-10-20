@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\PotensiPertanianKategoriSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Potensi Pertanian Kategoris';
+$this->title = 'Kategori Potensi Pertanian ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="potensi-pertanian-kategori-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Potensi Pertanian Kategori', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Kategori Potensi Pertanian ', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,13 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'nama_kategori',
             [
+                'header' => 'Aksi',
+                'template' => '{update} {delete}',
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, PotensiPertanianKategori $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

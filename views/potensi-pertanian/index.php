@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\PotensiPertanianSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Potensi Pertanians';
+$this->title = 'Potensi Pertanian';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="potensi-pertanian-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Potensi Pertanian', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Potensi Pertanian', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,15 +29,30 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'potensi_pertanian_kategori_id',
-            'luas',
-            'hasil_panen',
+            [
+                'attribute' => 'potensi_pertanian_kategori_id',
+                'value' => function ($model) {
+                    return $model->potensiPertanianKategori->nama_kategori;
+                },
+            ],
+            'jenis',
+            [
+                'attribute' => 'luas',
+                'value' => function ($model) {
+                    return $model->luas . " Ha";
+                },
+            ],
+            [
+                'attribute' => 'hasil_panen',
+                'value' => function ($model) {
+                    return $model->luas . " Ton/ha";
+                },
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, PotensiPertanian $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

@@ -9,8 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property int $potensi_pertanian_kategori_id
- * @property int $luas
- * @property int $hasil_panen
+ * @property string $jenis
+ * @property float $luas
+ * @property float $hasil_panen
  *
  * @property PotensiPertanianKategori $potensiPertanianKategori
  */
@@ -30,8 +31,10 @@ class PotensiPertanian extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['potensi_pertanian_kategori_id', 'luas', 'hasil_panen'], 'required'],
-            [['potensi_pertanian_kategori_id', 'luas', 'hasil_panen'], 'integer'],
+            [['potensi_pertanian_kategori_id', 'jenis', 'luas', 'hasil_panen'], 'required'],
+            [['potensi_pertanian_kategori_id'], 'integer'],
+            [['luas', 'hasil_panen'], 'number'],
+            [['jenis'], 'string', 'max' => 100],
             [['potensi_pertanian_kategori_id'], 'exist', 'skipOnError' => true, 'targetClass' => PotensiPertanianKategori::className(), 'targetAttribute' => ['potensi_pertanian_kategori_id' => 'id']],
         ];
     }
@@ -44,6 +47,7 @@ class PotensiPertanian extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'potensi_pertanian_kategori_id' => 'Potensi Pertanian Kategori ID',
+            'jenis' => 'Jenis',
             'luas' => 'Luas',
             'hasil_panen' => 'Hasil Panen',
         ];
