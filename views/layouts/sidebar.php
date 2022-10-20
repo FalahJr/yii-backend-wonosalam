@@ -1,6 +1,7 @@
 <?php
 
 use app\components\NodeLogger;
+use yii\helpers\Html;
 use yii\web\Controller;
 
 
@@ -21,7 +22,9 @@ if (Yii::$app->user->isGuest) {
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?= $assetDir ?>/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
+                <?= Html::img('@web/img/user-admin.png', ['class' => 'img-circle elevation-2', 'width' => '100%',]) ?>
+
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?= Yii::$app->user->isGuest == null ? Yii::$app->user->identity->username : null ?></a>

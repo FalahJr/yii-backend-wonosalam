@@ -7,13 +7,12 @@ use yii\widgets\DetailView;
 /** @var app\models\Penduduk $model */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Penduduks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Penduduk', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="penduduk-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
