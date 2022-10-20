@@ -32,34 +32,46 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
     <?php $this->beginBody() ?>
     <input type="checkbox" id="check"></input>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index">
-            <!-- <img src="assets/img/logo2.png" alt="Logo Wonosalam" height="50"> -->
+        <!-- <a class="navbar-brand" href="index">
             <h4>WONOSALAM<br>BERDIKARI</h4>
-        </a>
+        </a> -->
+        <?= Html::a('<h4>WONOSALAM<br>BERDIKARI</h4>', ['index'], ['class' => 'navbar-brand']) ?>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class=" navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="sejarah">Sejarah</a>
+                    <!-- <a class="nav-link nunitoSemiBold" href="sejarah">Sejarah</a> -->
+                    <?= Html::a('Sejarah', ['sejarah'], ['class' => 'nav-link nunitoSemiBold']) ?>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="pemerintahan">Pemerintahan</a>
+                    <!-- <a class="nav-link nunitoSemiBold" href="pemerintahan">Pemerintahan</a> -->
+                    <?= Html::a('Pemerintahan', ['pemerintahan'], ['class' => 'nav-link nunitoSemiBold']) ?>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="perkembangan-desa">
+                    <!-- <a class="nav-link nunitoSemiBold" href="perkembangan-desa">
                         Perkembangan Desa
-                    </a>
+                    </a> -->
+                    <?= Html::a('Perkembangan Desa', ['perkembangan-desa'], ['class' => 'nav-link nunitoSemiBold']) ?>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="potensi">Potensi</a>
+                    <!-- <a class="nav-link nunitoSemiBold" href="potensi">Potensi</a> -->
+                    <?= Html::a('Potensi', ['potensi'], ['class' => 'nav-link nunitoSemiBold']) ?>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="wisata">Wisata</a>
+                    <!-- <a class="nav-link nunitoSemiBold" href="wisata">Wisata</a> -->
+                    <?= Html::a('Wisata', ['wisata'], ['class' => 'nav-link nunitoSemiBold']) ?>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nunitoSemiBold" href="blog">Blog</a>
+                    <!-- <a class="nav-link nunitoSemiBold" href="blog">Blog</a> -->
+                    <?= Html::a('Blog', ['blog'], ['class' => 'nav-link nunitoSemiBold']) ?>
+
                 </li>
 
             </ul>

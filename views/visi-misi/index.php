@@ -10,12 +10,11 @@ use yii\grid\GridView;
 /** @var app\models\VisiMisiSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Visi Misis';
+$this->title = 'Visi Misi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="visi-misi-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <!-- <p>
         <?php
