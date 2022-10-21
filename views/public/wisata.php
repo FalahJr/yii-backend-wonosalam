@@ -16,21 +16,21 @@ $this->title = 'Wisata | Wonosalam';
 <section id="nav-wisata">
 	<div class="container">
 		<div class="row navbar navbar-expand-md sticky-top d-flex justify-content-around">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="wisata.html#wisata-religi">Wisata Religi</a>
+			<ul class="navbar-nav ">
+				<li class="nav-item ">
+					<a class="nav-link text-dark" href="wisata.html#wisata-religi">Wisata Religi</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="wisata.html#outbond">Outbound dan Training</a>
+					<a class="nav-link text-dark" href="wisata.html#outbond">Outbound dan Training</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="wisata.html#wisata-edukasi">Wisata Edukasi</a>
+					<a class="nav-link text-dark" href="wisata.html#wisata-edukasi">Wisata Edukasi</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="wisata.html#resto-dan-cafe">Resto dan Kafe</a>
+					<a class="nav-link text-dark" href="wisata.html#resto-dan-cafe">Resto dan Kafe</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="wisata.html#penginapan">Penginapan</a>
+					<a class="nav-link text-dark" href="wisata.html#penginapan">Penginapan</a>
 				</li>
 			</ul>
 		</div>
@@ -51,7 +51,7 @@ $this->title = 'Wisata | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-wisata.html">
 					<div class="card" style="width:335px">
-						<img class="card-img-top rounded" src="assets/img/religi.png" alt="Card image" style="width:100%">
+						<?= Html::img('@web/img/religi.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 						<div class="card-body">
 							<h4 class="card-title">Gunung Kuncung
 								Makam Wali Wonosegoro</h4>
@@ -82,7 +82,9 @@ $this->title = 'Wisata | Wonosalam';
 		<div class="row mt-5 card-content">
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/wtc.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/wtc.png" alt="Card image" style="width:100%"> -->
+					<?= Html::img('@web/img/wtc.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Wonosalam Training Center (WTC)
 						</h4>
@@ -96,7 +98,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/Asriloka.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/Asriloka.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/Asriloka.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Asriloka
 						</h4>
@@ -110,7 +115,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/lembah giri.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/lembah giri.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/lembah giri.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Bumi Perkemahan Lembah Giri
 						</h4>
@@ -124,7 +132,9 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/seloageng.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/seloageng.png" alt="Card image" style="width:100%"> -->
+					<?= Html::img('@web/img/seloageng.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Selo Ageng
 						</h4>
@@ -138,7 +148,9 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/pwl.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/pwl.png" alt="Card image" style="width:100%"> -->
+					<?= Html::img('@web/img/pwl.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Padepokan Wonosalam Lestari
 							Outbond and Training Camp</h4>
@@ -166,7 +178,10 @@ $this->title = 'Wisata | Wonosalam';
 		<div class="row mt-5 card-content">
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/kansa.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/kansa.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/kansa.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">KANSA - Kandang Sapi
 						</h4>
@@ -194,7 +209,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/sendang.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/sendang.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/sendang.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Sendang Rejosari
 						</h4>
@@ -222,7 +240,10 @@ $this->title = 'Wisata | Wonosalam';
 		<div class="row mt-5 card-content">
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/sinai.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/sinai.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/sinasi.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Saieda Estate/Sinai Caffe
 						</h4>
@@ -236,7 +257,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/lembah winden.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/lembah winden.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/lembah winden.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Lembah Winden
 						</h4>
@@ -250,7 +274,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/tanah senja.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/tanah senja.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/tanah senja.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Tanah Senja
 						</h4>
@@ -263,7 +290,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/warung nggunung.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/warung nggunung.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/warung nggunung.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Warung Nggunung
 						</h4>
@@ -277,7 +307,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/bu sulami.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/bu sulami.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/bu sulami.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Warung Bu Sulami
 						</h4>
@@ -291,7 +324,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/bukit durian.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/bukit durian.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/bukit durian.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Waroeng Bukit Durian
 						</h4>
@@ -305,7 +341,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/warung pojok.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/warung pojok.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/warung pojok.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Warung Pojok Sumber (Kopi Luwak)
 						</h4>
@@ -319,7 +358,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/pasar buah.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/pasar buah.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/pasar buah.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Pasar Buah
 						</h4>
@@ -332,7 +374,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/cafe puncak.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/cafe puncak.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/cafe puncak.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Kafe Puncak
 						</h4>
@@ -360,7 +405,10 @@ $this->title = 'Wisata | Wonosalam';
 		<div class="row mt-5 card-content">
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/kampung city.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/kampung city.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/kampung city.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Kampoeng City
 						</h4>
@@ -374,7 +422,10 @@ $this->title = 'Wisata | Wonosalam';
 			</div>
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<div class="card" style="width:335px">
-					<img class="card-img-top rounded" src="assets/img/agropolis.png" alt="Card image" style="width:100%">
+					<!-- <img class="card-img-top rounded" src="assets/img/agropolis.png" alt="Card image" style="width:100%"> -->
+
+					<?= Html::img('@web/img/agropolis.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 					<div class="card-body">
 						<h4 class="card-title">Agropolis
 						</h4>

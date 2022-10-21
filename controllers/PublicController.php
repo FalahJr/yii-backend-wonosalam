@@ -25,6 +25,12 @@ class PublicController extends Controller
     public function actions()
     {
         $this->layout = 'main-public.php';
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+
+        ];
     }
     /**
      * Displays homepage.

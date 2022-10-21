@@ -33,7 +33,10 @@ $this->title = 'Blog | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-blog.html">
 					<div class="card">
-						<img class="card-img-top rounded" src="assets/img/card-blog.png" alt="Card image" style="width:100%">
+						<!-- <img class="card-img-top rounded" src="assets/img/card-blog.png" alt="Card image" style="width:100%"> -->
+
+						<?= Html::img('@web/img/card-blog.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 						<div class="card-body">
 							<div class="tagline mb-2">
 								<button disabled="disabled" class="btn btn-sm btn-primary text-light ">Ekonomi</button>
@@ -57,7 +60,10 @@ $this->title = 'Blog | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-blog.html">
 					<div class="card">
-						<img class="card-img-top rounded" src="assets/img/posyandu.png" alt="Card image" style="width:100%">
+						<!-- <img class="card-img-top rounded" src="assets/img/posyandu.png" alt="Card image" style="width:100%"> -->
+
+						<?= Html::img('@web/img/posyandu.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 						<div class="card-body">
 							<div class="tagline mb-2">
 								<button disabled="disabled" class="btn btn-sm btn-primary text-light ">Ekonomi</button>
@@ -79,7 +85,10 @@ $this->title = 'Blog | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-blog.html">
 					<div class="card">
-						<img class="card-img-top rounded" src="assets/img/kenduri durian.png" alt="Card image" style="width:100%">
+						<!-- <img class="card-img-top rounded" src="assets/img/kenduri durian.png" alt="Card image" style="width:100%"> -->
+
+						<?= Html::img('@web/img/kenduri durian.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 						<div class="card-body">
 							<div class="tagline mb-2">
 								<button disabled="disabled" class="btn btn-sm btn-primary text-light ">Ekonomi</button>
@@ -101,7 +110,10 @@ $this->title = 'Blog | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-blog.html">
 					<div class="card">
-						<img class="card-img-top rounded" src="assets/img/gugur gunung.png" alt="Card image" style="width:100%">
+						<!-- <img class="card-img-top rounded" src="assets/img/gugur gunung.png" alt="Card image" style="width:100%"> -->
+
+						<?= Html::img('@web/img/gugur gunung.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 						<div class="card-body">
 							<div class="tagline mb-2">
 								<button disabled="disabled" class="btn btn-sm btn-primary text-light ">Ekonomi</button>
@@ -123,7 +135,10 @@ $this->title = 'Blog | Wonosalam';
 			<div class="col-lg-4 col-md-6 col-12 mb-4">
 				<a href="detail-blog.html">
 					<div class="card">
-						<img class="card-img-top rounded" src="assets/img/default-card.png" alt="Card image" style="width:100%">
+						<!-- <img class="card-img-top rounded" src="assets/img/default-card.png" alt="Card image" style="width:100%"> -->
+
+						<?= Html::img('@web/img/default-card.png', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+
 						<div class="card-body">
 							<div class="tagline mb-2">
 								<button disabled="disabled" class="btn btn-sm btn-primary text-light ">Ekonomi</button>
