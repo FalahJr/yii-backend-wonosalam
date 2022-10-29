@@ -86,7 +86,7 @@ if (Yii::$app->user->isGuest) {
                         'icon' => 'leaf',
                         'items' => [
                             ['label' => 'Luas Tanah Perkebunan', 'url' => ['potensi-perkebunan/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Hasil Perkebunan menurut jenis komoditas', 'url' => ['site/s'], 'iconStyle' => 'far'],
+                            ['label' => 'Hasil Perkebunan menurut jenis komoditas', 'url' => ['potensi-perkebunan-komoditi/index'], 'iconStyle' => 'far'],
 
                         ]
                     ],

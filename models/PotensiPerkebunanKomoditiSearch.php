@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\PotensiKehutananBuah;
+use app\models\PotensiPerkebunanKomoditi;
 
 /**
- * PotensiKehutananBuahSearch represents the model behind the search form of `app\models\PotensiKehutananBuah`.
+ * PotensiPerkebunanKomoditiSearch represents the model behind the search form of `app\models\PotensiPerkebunanKomoditi`.
  */
-class PotensiKehutananBuahSearch extends PotensiKehutananBuah
+class PotensiPerkebunanKomoditiSearch extends PotensiPerkebunanKomoditi
 {
     /**
      * {@inheritdoc}
@@ -17,9 +17,8 @@ class PotensiKehutananBuahSearch extends PotensiKehutananBuah
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['nama_hasil_hutan', 'satuan'], 'safe'],
-            [['luas'], 'number'],
+            [['id', 'swasta_negara_luas', 'swasta_negara_hasil', 'rakyat_luas', 'rakyat_hasil'], 'integer'],
+            [['nama'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class PotensiKehutananBuahSearch extends PotensiKehutananBuah
      */
     public function search($params)
     {
-        $query = PotensiKehutananBuah::find();
+        $query = PotensiPerkebunanKomoditi::find();
 
         // add conditions that should always apply here
 
@@ -60,11 +59,13 @@ class PotensiKehutananBuahSearch extends PotensiKehutananBuah
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'luas' => $this->luas,
+            'swasta_negara_luas' => $this->swasta_negara_luas,
+            'swasta_negara_hasil' => $this->swasta_negara_hasil,
+            'rakyat_luas' => $this->rakyat_luas,
+            'rakyat_hasil' => $this->rakyat_hasil,
         ]);
 
-        $query->andFilterWhere(['like', 'nama_hasil_hutan', $this->nama_hasil_hutan])
-            ->andFilterWhere(['like', 'satuan', $this->satuan]);
+        $query->andFilterWhere(['like', 'nama', $this->nama]);
 
         return $dataProvider;
     }

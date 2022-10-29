@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $nama
- * @property int $luas
+ * @property float $luas
  */
 class PotensiPerkebunan extends \yii\db\ActiveRecord
 {
@@ -28,7 +28,7 @@ class PotensiPerkebunan extends \yii\db\ActiveRecord
     {
         return [
             [['nama', 'luas'], 'required'],
-            [['luas'], 'integer'],
+            [['luas'], 'number'],
             [['nama'], 'string', 'max' => 100],
         ];
     }

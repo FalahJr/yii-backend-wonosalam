@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-/** @var app\models\PotensiPerkebunan $model */
+/** @var app\models\PotensiPerkebunanKomoditi $model */
 
 $this->title = $model->nama;
-$this->params['breadcrumbs'][] = ['label' => 'Potensi Perkebunan', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Potensi Perkebunan Komoditas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="potensi-perkebunan-view">
+<div class="potensi-perkebunan-komoditi-view">
 
 
     <p>
@@ -29,7 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'nama',
-            'luas',
+            'swasta_negara_luas',
+            'swasta_negara_hasil',
+            'rakyat_luas',
+            'rakyat_hasil',
         ],
     ]) ?>
 

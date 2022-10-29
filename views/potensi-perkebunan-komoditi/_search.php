@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var app\models\PotensiKehutananBuahSearch $model */
+/** @var app\models\PotensiPerkebunanKomoditiSearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="potensi-kehutanan-buah-search">
+<div class="potensi-perkebunan-komoditi-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,11 +17,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'nama_hasil_hutan') ?>
+    <?= $form->field($model, 'nama') ?>
 
-    <?= $form->field($model, 'luas') ?>
+    <?= $form->field($model, 'swasta_negara_luas') ?>
 
-    <?= $form->field($model, 'satuan') ?>
+    <?= $form->field($model, 'swasta_negara_hasil') ?>
+
+    <?= $form->field($model, 'rakyat_luas') ?>
+
+    <?php // echo $form->field($model, 'rakyat_hasil') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

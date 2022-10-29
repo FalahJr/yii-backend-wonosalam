@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property string $nama_hasil_hutan
  * @property float $luas
+ * @property string $satuan
  */
 class PotensiKehutananBuah extends \yii\db\ActiveRecord
 {
@@ -27,9 +28,9 @@ class PotensiKehutananBuah extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_hasil_hutan', 'luas'], 'required'],
+            [['nama_hasil_hutan', 'luas', 'satuan'], 'required'],
             [['luas'], 'number'],
-            [['nama_hasil_hutan'], 'string', 'max' => 100],
+            [['nama_hasil_hutan', 'satuan'], 'string', 'max' => 100],
         ];
     }
 
@@ -42,6 +43,7 @@ class PotensiKehutananBuah extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nama_hasil_hutan' => 'Nama Hasil Hutan',
             'luas' => 'Luas',
+            'satuan' => 'Satuan',
         ];
     }
 }
