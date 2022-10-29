@@ -12,6 +12,10 @@ use app\models\ContactForm;
 use app\models\MataPencaharian;
 use app\models\Pendidikan;
 use app\models\Penduduk;
+use app\models\PotensiKehutananBuah;
+use app\models\PotensiKehutananKepemilikan;
+use app\models\PotensiPerkebunan;
+use app\models\PotensiPerkebunanKomoditi;
 use app\models\PotensiPertanian;
 use app\models\PotensiPeternakan;
 use app\models\StrukturDesa;
@@ -89,9 +93,17 @@ class PublicController extends Controller
     {
         $pertanian = PotensiPertanian::find()->all();
         $peternakan = PotensiPeternakan::find()->all();
+        $kehutanan_buah = PotensiKehutananBuah::find()->all();
+        $kehutanan_kepemilikan = PotensiKehutananKepemilikan::find()->all();
+        $perkebunan = PotensiPerkebunan::find()->all();
+        $perkebunan_komoditi = PotensiPerkebunanKomoditi::find()->all();
         return $this->render('potensi', [
             'pertanian' => $pertanian,
             'peternakan' => $peternakan,
+            'kehutanan_buah' => $kehutanan_buah,
+            'kehutanan_kepemilikan' => $kehutanan_kepemilikan,
+            'perkebunan' => $perkebunan,
+            'perkebunan_komoditi' => $perkebunan_komoditi,
 
         ]);
     }

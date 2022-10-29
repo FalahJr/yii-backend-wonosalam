@@ -160,25 +160,18 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Tanah Perkebunan Rakyat</td>
-										<td>46101</td>
-									</tr>
-									<tr>
-										<td>Tanah Perkerbunan Negara</td>
-										<td>0,00</td>
-									</tr>
-									<tr>
-										<td>Tanah Perkebunan Swasta</td>
-										<td>10,00</td>
-									</tr>
-									<tr>
-										<td>Tanah Perkebunan Perorangan</td>
-										<td>225,00</td>
-									</tr>
+									<?php
+									$jumlah_total = 0;
+									foreach ($perkebunan as $listPerkebunan) { ?>
+										<tr>
+											<td><?= $listPerkebunan->nama ?></td>
+											<td><?= $listPerkebunan->luas ?></td>
+											<?php $jumlah_total += $listPerkebunan->luas ?>
+										</tr>
+									<?php } ?>
 									<tr>
 										<td>Jumlah</td>
-										<td>696,01</td>
+										<td><?= $jumlah_total ?></td>
 									</tr>
 								</tbody>
 							</table>
@@ -200,41 +193,20 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Kelapa</td>
-										<td>0,00</td>
-										<td>0,00</td>
-										<td>10,00</td>
-										<td>1,00</td>
-									</tr>
-									<tr>
-										<td>Kopi</td>
-										<td>0,00</td>
-										<td>0,00</td>
-										<td>25,00</td>
-										<td>3,00</td>
-									</tr>
-									<tr>
-										<td>Cengkeh</td>
-										<td>0,00</td>
-										<td>0,00</td>
-										<td>65,00</td>
-										<td>5,00</td>
-									</tr>
-									<tr>
-										<td>Coklat</td>
-										<td>0,00</td>
-										<td>0,00</td>
-										<td>15,00</td>
-										<td>1,00</td>
-									</tr>
-									<tr>
-										<td>Tebu</td>
-										<td>0,00</td>
-										<td>0,00</td>
-										<td>15,00</td>
-										<td>15,00</td>
-									</tr>
+									<?php
+									foreach ($perkebunan_komoditi as $list_perkebunan_komoditi) {
+
+									?>
+										<tr>
+											<td><?= $list_perkebunan_komoditi->nama ?></td>
+											<td><?= $list_perkebunan_komoditi->swasta_negara_luas ?></td>
+											<td><?= $list_perkebunan_komoditi->swasta_negara_hasil ?></td>
+											<td><?= $list_perkebunan_komoditi->rakyat_luas ?></td>
+											<td><?= $list_perkebunan_komoditi->rakyat_hasil ?></td>
+										</tr>
+									<?php
+									}
+									?>
 								</tbody>
 							</table>
 						</div>
@@ -265,17 +237,18 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Perhutanan/instansi sektoral</td>
-										<td>105,00 Ha</td>
-									</tr>
-									<tr>
-										<td>Milik masyarakat perorangan</td>
-										<td>75,00 Ha</td>
-									</tr>
+									<?php
+									$jumlah_total = 0;
+									foreach ($kehutanan_kepemilikan as $list_kehutanan_kepemilikan) { ?>
+										<tr>
+											<td><?= $list_kehutanan_kepemilikan->nama_kepemilikan ?></td>
+											<td><?= $list_kehutanan_kepemilikan->luas ?> Ha</td>
+											<?php $jumlah_total += $list_kehutanan_kepemilikan->luas ?>
+										</tr>
+									<?php } ?>
 									<tr>
 										<td>Jumlah</td>
-										<td>180,00 Ha</td>
+										<td><?= $jumlah_total ?> Ha</td>
 									</tr>
 								</tbody>
 							</table>
@@ -290,26 +263,18 @@ $this->title = 'Potensi | Wonosalam';
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Kayu</td>
-										<td>25,00 M3/TH</td>
-									</tr>
-									<tr>
-										<td>Madu Lebah</td>
-										<td>10,00 liter/TH</td>
-									</tr>
-									<tr>
-										<td>Jati</td>
-										<td>25,00 M3/TH</td>
-									</tr>
-									<tr>
-										<td>Mahoni</td>
-										<td>25,00 M3/TH</td>
-									</tr>
-									<tr>
-										<td>Kayu</td>
-										<td>1,00 Ton/TH</td>
-									</tr>
+									<?php
+									foreach ($kehutanan_buah as $list_kehutanan_buah) {
+
+									?>
+										<tr>
+											<td><?= $list_kehutanan_buah->nama_hasil_hutan ?></td>
+											<td><?= $list_kehutanan_buah->luas . " " . $list_kehutanan_buah->satuan ?> /TH</td>
+
+										</tr>
+									<?php
+									}
+									?>
 								</tbody>
 							</table>
 						</div>
