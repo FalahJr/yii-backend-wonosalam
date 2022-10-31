@@ -6,14 +6,13 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\BlogKategori $model */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Blog Kategoris', 'url' => ['index']];
+$this->title = $model->nama;
+$this->params['breadcrumbs'][] = ['label' => 'Kategori Blog', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="blog-kategori-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -29,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'nama',
         ],
     ]) ?>

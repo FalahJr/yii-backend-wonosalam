@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\WisataSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Wisatas';
+$this->title = 'Wisata';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wisata-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Wisata', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,11 +29,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'wisata_kategori_id',
+            [
+                'attribute' => 'wisata_kategori_id',
+                'value' => function ($model) {
+                    return $model->wisataKategori->nama;
+                },
+            ],
             'judul',
-            'deskripsi',
-            'gambar',
+            [
+                'attribute' => 'gambar',
+                'format' => 'html',
+                'value' => function ($data) {
+                    return Html::img('../../uploads/image/' . $data['gambar']);
+                },
+
+            ],
             //'url_maps:url',
             //'created_at',
             //'update_at',
@@ -43,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Wisata $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

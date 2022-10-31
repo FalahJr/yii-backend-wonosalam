@@ -9,9 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property int $blog_kategori_id
- * @property int $title
- * @property int $deskripsi
- * @property int $gambar
+ * @property string $title
+ * @property string $deskripsi
+ * @property string $gambar
  * @property string $created_at
  * @property string $update_at
  * @property string $created_date
@@ -36,9 +36,11 @@ class Blog extends \yii\db\ActiveRecord
     {
         return [
             [['blog_kategori_id', 'title', 'deskripsi', 'gambar', 'created_at', 'update_at', 'created_date', 'update_date'], 'required'],
-            [['blog_kategori_id', 'title', 'deskripsi', 'gambar'], 'integer'],
+            [['blog_kategori_id'], 'integer'],
+            [['deskripsi'], 'string'],
             [['created_date', 'update_date'], 'safe'],
-            [['created_at', 'update_at'], 'string', 'max' => 100],
+            [['title', 'created_at', 'update_at'], 'string', 'max' => 100],
+            [['gambar'], 'string', 'max' => 255],
             [['blog_kategori_id'], 'exist', 'skipOnError' => true, 'targetClass' => BlogKategori::className(), 'targetAttribute' => ['blog_kategori_id' => 'id']],
         ];
     }

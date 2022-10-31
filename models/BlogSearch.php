@@ -17,8 +17,8 @@ class BlogSearch extends Blog
     public function rules()
     {
         return [
-            [['id', 'blog_kategori_id', 'title', 'deskripsi', 'gambar'], 'integer'],
-            [['created_at', 'update_at', 'created_date', 'update_date'], 'safe'],
+            [['id', 'blog_kategori_id', 'title', 'gambar'], 'integer'],
+            [['deskripsi', 'created_at', 'update_at', 'created_date', 'update_date'], 'safe'],
         ];
     }
 
@@ -61,13 +61,13 @@ class BlogSearch extends Blog
             'id' => $this->id,
             'blog_kategori_id' => $this->blog_kategori_id,
             'title' => $this->title,
-            'deskripsi' => $this->deskripsi,
             'gambar' => $this->gambar,
             'created_date' => $this->created_date,
             'update_date' => $this->update_date,
         ]);
 
-        $query->andFilterWhere(['like', 'created_at', $this->created_at])
+        $query->andFilterWhere(['like', 'deskripsi', $this->deskripsi])
+            ->andFilterWhere(['like', 'created_at', $this->created_at])
             ->andFilterWhere(['like', 'update_at', $this->update_at]);
 
         return $dataProvider;

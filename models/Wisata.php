@@ -38,8 +38,9 @@ class Wisata extends \yii\db\ActiveRecord
         return [
             [['wisata_kategori_id', 'judul', 'deskripsi', 'gambar', 'url_maps', 'created_at', 'update_at', 'created_date', 'update_date'], 'required'],
             [['wisata_kategori_id'], 'integer'],
+            [['deskripsi'], 'string'],
             [['created_date', 'update_date'], 'safe'],
-            [['judul', 'deskripsi', 'gambar', 'url_maps'], 'string', 'max' => 255],
+            [['judul', 'gambar', 'url_maps'], 'string', 'max' => 255],
             [['created_at', 'update_at'], 'string', 'max' => 100],
             [['wisata_kategori_id'], 'exist', 'skipOnError' => true, 'targetClass' => WisataKategori::className(), 'targetAttribute' => ['wisata_kategori_id' => 'id']],
         ];
@@ -72,5 +73,10 @@ class Wisata extends \yii\db\ActiveRecord
     public function getWisataKategori()
     {
         return $this->hasOne(WisataKategori::className(), ['id' => 'wisata_kategori_id']);
+    }
+
+    public function getImageUrl()
+    {
+        return \Yii::$app->request->BaseUrl . '../uploads/image/' . $this->gambar;
     }
 }

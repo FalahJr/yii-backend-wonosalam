@@ -10,18 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\BlogSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Blogs';
+$this->title = 'Daftar Blog';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Blog', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Blog', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,11 +29,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'blog_kategori_id',
+            [
+                'attribute' => 'blog_kategori_id',
+                'value' => function ($model) {
+                    return $model->blogKategori->nama;
+                },
+            ],
             'title',
             'deskripsi',
-            'gambar',
+            [
+                'attribute' => 'gambar',
+                'format' => 'html',
+                'value' => function ($data) {
+                    return Html::img('../../uploads/image/' . $data['gambar']);
+                },
+
+            ],
             //'created_at',
             //'update_at',
             //'created_date',
@@ -42,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Blog $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

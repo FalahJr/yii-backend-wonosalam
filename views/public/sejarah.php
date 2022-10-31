@@ -35,7 +35,7 @@ $this->title = 'Sejarah | Wonosalam';
 				maja yang tumbuh lebat serta pohon nagasari yang di yakini merupakan tongkat yang ditancapkan oleh
 				Mbah Senari saat pertama kali datang. <br><br>
 				Keberadaan makam ini mampu menarik perhatian masyarakat dari kota Jombang sendiri maupun dari luar
-				kota. Mereka datang dengan berbagai macam keluhan dan permintaan. Dalam kata lain makam ini juga
+				kota. Mereka datang dengan berbagai macam image dan permintaan. Dalam kata lain makam ini juga
 				digunakan oleh mereka sebagai tempat mencari kesaktian dan melakukan ritual-ritual lain. Seperti
 				meminta kekayaan, kecerdasan, jabatan dan lain sebagainya. <br><br>
 				Meskipun letak dan medan menuju makam gunung kuncung terbilang tidak mudah. Karena makam ini

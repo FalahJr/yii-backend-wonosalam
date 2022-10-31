@@ -2,11 +2,14 @@
 
 namespace app\controllers;
 
+use app\components\NodeLogger;
 use app\models\Wisata;
 use app\models\WisataSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * WisataController implements the CRUD actions for Wisata model.
@@ -69,17 +72,63 @@ class WisataController extends Controller
     {
         $model = new Wisata();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+        // if ($this->request->isPost) {
+        //     if ($model->load($this->request->post()) 
+        //     // $model->gambar= "tes"
+        //     // && $model->save()
+        //     ) 
+        //     {
+        //         return $this->redirect(['view', 'id' => $model->id]);
+        //     }
+        // } else {
+        //     $model->loadDefaultValues();
+        // }
+
+        if ($model->load(Yii::$app->request->post())) {
+
+            $url_gambar = UploadedFile::getInstance($model, 'gambar');
+            $model->gambar = $url_gambar->name;
+
+            NodeLogger::sendLog(['gambar' => $model->gambar]);
+
+            if ($model->validate()) {
+                $saveTo = '../uploads/image/' . $url_gambar->baseName . '.' . $url_gambar->extension;
+
+                if ($url_gambar->saveAs($saveTo)) {
+                    // $model->upload_by = Yii::$app->user->identity->username;
+                    // $model->tgl_upload = date('Y-m-d H:i:s');
+                    $model->save();
+
+
+                    yii::$app->session->setFlash('success', 'Data berhasil diupload');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            } else {
+                echo "gagal";
+                $model->loadDefaultValues();
             }
-        } else {
-            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
+        // $Wisata = new Wisata();
+        // $Wisata->wisata_kategori_id = $Wisata->load($_POST["wisata_kategori_id"]);
+        // $Wisata->judul = $Wisata->load($_POST["judul"]);
+        // $Wisata->deskripsi = $Wisata->load($_POST["deskripsi"]);
+        // $Wisata->gambar = $Wisata->load($_POST["gambar"]);
+        // $Wisata->url_maps = $Wisata->load($_POST["url_maps"]);
+        // $Wisata->created_at = "admin";
+        // $Wisata->update_at = "";
+        // $Wisata->created_date = date("Y-m-d H:i:s");;
+        // $Wisata->update_at = date("Y-m-d H:i:s");;
+
+        // if ($Wisata->save()) {
+        //     return $this->redirect(['create']);
+        // }
+        // return $this->render('create', [
+        //     'model' => $Wisata,
+        // ]);
     }
 
     /**

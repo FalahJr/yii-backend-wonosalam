@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Blog;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -20,6 +21,7 @@ use app\models\PotensiPertanian;
 use app\models\PotensiPeternakan;
 use app\models\StrukturDesa;
 use app\models\VisiMisi;
+use app\models\Wisata;
 
 class PublicController extends Controller
 {
@@ -49,7 +51,11 @@ class PublicController extends Controller
 
     public function actionBlog()
     {
-        return $this->render('blog');
+        $blog = Blog::find()->all();
+
+        return $this->render('blog', [
+            'blog' => $blog,
+        ]);
     }
 
     public function actionDetailBlog()
@@ -59,7 +65,19 @@ class PublicController extends Controller
 
     public function actionWisata()
     {
-        return $this->render('wisata');
+        $religi = Wisata::find()->where(['wisata_kategori_id' => 1])->all();
+        $outbound = Wisata::find()->where(['wisata_kategori_id' => 2])->all();
+        $edukasi = Wisata::find()->where(['wisata_kategori_id' => 3])->all();
+        $resto_cafe = Wisata::find()->where(['wisata_kategori_id' => 4])->all();
+        $penginapan = Wisata::find()->where(['wisata_kategori_id' => 5])->all();
+        return $this->render('wisata', [
+            'religi' => $religi,
+            'outbound' => $outbound,
+            'edukasi' => $edukasi,
+            'resto_cafe' => $resto_cafe,
+            'penginapan' => $penginapan,
+
+        ]);
     }
 
     public function actionDetailWisata()
