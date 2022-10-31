@@ -58,9 +58,14 @@ class PublicController extends Controller
         ]);
     }
 
-    public function actionDetailBlog()
+    public function actionDetailBlog($id)
     {
-        return $this->render('detail-blog');
+        $detail_blog = Blog::find()->where(['id' => $id])->one();
+
+        return $this->render('detail-blog', [
+            'detail_blog' => $detail_blog,
+        ]);
+        // return $this->render('detail-blog');
     }
 
     public function actionWisata()
@@ -80,9 +85,13 @@ class PublicController extends Controller
         ]);
     }
 
-    public function actionDetailWisata()
+    public function actionDetailWisata($id)
     {
-        return $this->render('detail-wisata');
+        $detail_wisata = Wisata::find()->where(['id' => $id])->one();;
+
+        return $this->render('detail-wisata', [
+            'detail_wisata' => $detail_wisata,
+        ]);
     }
     public function actionPemerintahan()
     {

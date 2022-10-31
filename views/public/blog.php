@@ -43,7 +43,7 @@ $this->title = 'Blog | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-blog.html">
+						<a href="detail-blog?id=<?= $list_blog->id ?>">
 							<div class="card">
 								<!-- <img class="card-img-top rounded" src="assets/img/card-blog.png" alt="Card image" style="width:100%"> -->
 
@@ -62,13 +62,13 @@ $this->title = 'Blog | Wonosalam';
 									</p>
 								</div>
 								<div class=" card-footer">
-									<a href="detail-blog.html" class="btn">Baca Selengkapnya</a>
+									<a href="detail-blog?id=<?= $list_blog->id ?>" class="btn">Baca Selengkapnya</a>
 								</div>
 							</div>
 						</a>
 					</div>
 			<?php
-				};
+				}
 			}
 			?>
 		</div>

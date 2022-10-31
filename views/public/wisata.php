@@ -61,7 +61,7 @@ $this->title = 'Wisata | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-wisata.php">
+						<a href="detail-wisata?id=<?= $list_wisata->id ?>">
 							<div class="card" style="width:335px">
 								<?= Html::img('../../uploads/image/' . $list_wisata->gambar . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 								<div class="card-body">
@@ -107,7 +107,7 @@ $this->title = 'Wisata | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-wisata.php">
+						<a href="detail-wisata?id=<?= $list_wisata->id ?>">
 							<div class="card" style="width:335px">
 								<?= Html::img('../../uploads/image/' . $list_wisata->gambar . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 								<div class="card-body">
@@ -153,7 +153,7 @@ $this->title = 'Wisata | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-wisata.php">
+						<a href="detail-wisata?id=<?= $list_wisata->id ?>">
 							<div class="card" style="width:335px">
 								<?= Html::img('../../uploads/image/' . $list_wisata->gambar . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 								<div class="card-body">
@@ -199,7 +199,7 @@ $this->title = 'Wisata | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-wisata.php">
+						<a href="detail-wisata?id=<?= $list_wisata->id ?>">
 							<div class="card" style="width:335px">
 								<?= Html::img('../../uploads/image/' . $list_wisata->gambar . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 								<div class="card-body">
@@ -245,7 +245,7 @@ $this->title = 'Wisata | Wonosalam';
 
 				?>
 					<div class="col-lg-4 col-md-6 col-12 mb-4">
-						<a href="detail-wisata.php">
+						<a href="detail-wisata?id=<?= $list_wisata->id ?>">
 							<div class="card" style="width:335px">
 								<?= Html::img('../../uploads/image/' . $list_wisata->gambar . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
 								<div class="card-body">

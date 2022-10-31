@@ -1,5 +1,8 @@
 <?php
-$this->title = 'Detail Wisata | Wonosalam';
+
+use yii\helpers\Html;
+
+$this->title = $detail_wisata['judul'] . ' | Wonosalam';
 ?>
 
 <!-- Start of Content -->
@@ -8,46 +11,43 @@ $this->title = 'Detail Wisata | Wonosalam';
 		<div class="row">
 			<div class="col-lg-8 ">
 				<center>
-					<h2 class="font-weight-bold mb-3">Gunung Kuncung
-						Makam Wali Wonosegoro</h2>
-					<div class="owl-carousel owl-theme detailPost mb-4 w-75">
-						<div class="items">
-							<img src="assets/img/religi.png" class="img-fluid" alt="">
-						</div>
-						<div class="items">
+					<h2 class="font-weight-bold mb-3"><?= $detail_wisata['judul'] ?></h2>
+					<div id="demo" class="carousel slide mb-3" data-ride="carousel">
 
-							<img src="assets/img/religi.png" class="img-fluid" alt="">
-						</div>
-						<div class="items">
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"></li>
+							<li data-target="#demo" data-slide-to="1"></li>
+							<li data-target="#demo" data-slide-to="2"></li>
+						</ul>
 
-							<img src="assets/img/religi.png" class="img-fluid" alt="">
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<!-- <img src="assets/img/card-blog.png" alt="Los Angeles"> -->
+								<?= Html::img('../../uploads/image/' . $detail_wisata['gambar'] . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+							</div>
+							<div class="carousel-item">
+								<?= Html::img('../../uploads/image/' . $detail_wisata['gambar'] . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+							</div>
+							<div class="carousel-item">
+								<?= Html::img('../../uploads/image/' . $detail_wisata['gambar'] . '', ['class' => 'card-img-top rounded', 'width' => '100%']) ?>
+							</div>
 						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#demo" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#demo" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
 
 					</div>
 					<div>
-						<p align="justify" class="slide-text nunitoRegular">Situs makam gunung kuncung ini bisa
-							menjadi salah satu rekomendasi buat kalian yang ingin tahu tentang sejarah Desa
-							Wonosalam lho. Situs yang bertempat di lereng kaki Gunung Anjasmara ini, terdapat sebuah
-							makam yang dipercaya sebagai pembabat alas Wonosalam, yakni Waliwonosegoro. <br><br>
-							Nama asli dari Waliwonosegoro ini adalah Sunari. Banyak orang yang percaya Sunari
-							sebenarnya adalah Raja Brawijaya V yang memilih menjadi rakyat bias selepas menjadi raja
-							Majapahit. Bahkan di sisi kanan makam terdapat pohon maja yang berbuah lebat, pohon yang
-							menjadi ciri khas dari Kerajaan Majapahit.
+						<p align="justify" class="slide-text nunitoRegular">
+							<?= $detail_wisata['deskripsi'] ?>
 							<br><br>
-							Terdapat sebuah cerita yang menceritakan mengapa dinamakan gunung kuncung. Yakni, konon
-							Semar dan Seno terlibat perselisihan, sehingga membuat Seno menendang Semar sampai
-							kuncungnya terlepas ke arah gunung. Lalu diberi nama Gunung Kuncung. <br><br>
-							Tak heran jika di samping pintu masuk makam terdapat patung Semar lengkap dengan patung
-							macan putih. Menurut juru kunci makam gunung kuncung, situs ini menjadi ramai saat hari
-							Jumat pahing, dan Jumat legi. Banyak orang datang berbondong-bondong untuk melakukan
-							ritual dan doa-doa. Seperti meminta kenaikan pangkat dan harta bahkan ada yang rela
-							untuk menetap hingga bertahun-tahun. <br><br>
-							Nah, gimana tertarik untuk mengunjungi situs ini! <br><br>
-							Satu informasi lagi untuk kalian yang ingin mengunjungi situs makam gunung kuncung ini.
-							Kalian tidak perlu panik dengan harga tiket ataupun waktu beroperasinya, karena situs
-							ini terbuka 24 jam secara free. Biasanya para pengunjung hanya memberikan sumbangan
-							seikhlasnya untuk pengembangan dan perbaikan sarana prasarana seperti toilet dan tempat
-							tinggal bagi yang menginap. <br><br>
 
 						</p>
 
@@ -62,11 +62,11 @@ $this->title = 'Detail Wisata | Wonosalam';
 			<div class="col-lg-3 sidebar nunitoRegular">
 				<div class="informasi mt-4">
 					<h5 class="font-weight-bold">Google Maps</h5>
-					<a href="https://goo.gl/maps/wkTKrL9CSmyCULn79">https://goo.gl/maps/wkTKrL9CSmyCULn79</a>
+					<a href="<?= $detail_wisata['url_maps'] ?>"><?= $detail_wisata['url_maps'] ?></a>
 					<div class="auth-detail mt-3">
 						<div class="d-flex align-items-center">
-							<img src="assets/icon/Photo Profile.svg" width="40" alt="">
-							<h5 class="nunitoSemiBold ml-3 my-0">Admin</h5>
+							<img src="../../web/icon/PhotoProfile.svg" width="40" alt="">
+							<h5 class="nunitoSemiBold ml-3 my-0"><?= $detail_wisata['created_at'] ?></h5>
 						</div>
 					</div>
 				</div>
